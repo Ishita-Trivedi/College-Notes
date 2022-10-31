@@ -1,0 +1,86 @@
+(Python) Chapter 1: Introduction to Programming in Python
+1.1 Compiled vs. Interpreted Languages
+Computers only understand 0s and 1s, their native machine language. All of the executable
+programs on your computer are a collection of these 0s and 1s that tell your computer exactly
+what to execute. However, humans do a rather poor job of communicating and 0s and 1s. If we
+had to always write our instructions to computers in this manner, things would go very, very
+slowly and we'd have quite a few unhappy computer programmers, to say the least. Luckily,
+there are two common solutions employed so that programmers don't have to write their
+instructions to a computer in 0s and 1s:
+1) Compiled languages
+2) Interpreted languages
+In a compiled language, the programmer writes a program in a programming language that is
+human readable. Then, a program called a compiler translates this program into a set of 0s and 1s
+known as an executable file that the computer will understand. It's this executable file that the
+computer runs. If one wants to make changes to how their program runs, they must first make a
+change to their program, then recompile it (retranslate it) to create an updated executable file that
+the computer understands.
+In an interpreted language, rather than doing all the translation at once, the compiler translates
+some of the code written (maybe a line or two) in a human readable language to an intermediate
+form, and then this form gets "interpreted" to 0s and 1s that the machine understands and
+immediately executes. Thus, the translation and execution are going on simultaneously.
+Python is an interpreted programming language. One standard environment in which students
+often write python programs is IDLE (Integrated Distributed Learning Environment). This
+environment offers students two separate ways to write and run python programs. Since the
+language is interpreted, there exists an option for students to write a single line of python code
+and immediately see the results. Alternatively, students can open a separate window, put all of
+their commands in this window first, and then interpret their program. The first method lets
+students see, in real time, the results of their statements. The second follows the more traditional
+model of composing an entire program first before compiling and seeing the results. For learning
+purposes, the first technique is very useful. Ultimately however, students must develop their
+programs utilizing the second method.
+When you open IDLE (Version 3.2.2) for the first time, you're presented with the following
+window:
+1.2 Output - print statement
+print statement - basic form
+The prompt (>>>) awaits the user to enter a line of python to be interpreted. The most simple
+line of code that shows a result is a print statement. Try the following example:
+>>> print("Hello World!")
+When you hit enter, you get the following output from the IDLE editor:
+Hello World!
+Now, consider typing in the following:
+>>> print(Hello World)
+Unfortunately, IDLE responds with the following error message:
+SyntaxError: invalid syntax
+Programming languages have very strict syntax rules. Whereas in English, if a grammar rule is
+improperly used, most people still understand the gist of the message, in a programming
+language, even if the most tiny rule is broken, the interpreter can NOT compensate by fixing the
+error. Rather, the interpreter gives an error message alerting the programmer about the error. In
+this case the message itself isn't terribly useful, since it's not specific at all. In other cases, the
+error messages are more specific. In this case it's clear that the only difference between the
+statement that worked and the one that didn't is that the latter is missing a pair of double quotes.
+This is the syntax error committed above.
+Now, we can formally present the proper syntax of the print statement in python:
+print(<string expression>)
+First, we use the keyword "print," followed by a pair of enclosing parentheses (). Inside those
+parentheses we must provide a valid string expression.
+The first type of string expression we'll learn is a string literal. In common English, the word
+literal means, "in accordance with, involving, or being the primary or strict meaning of the word
+or words; not figurative or metaphorical." In programming, literal simply means "constant." A
+literal expression is one that can not change value. In python, and in many other programming
+languages, string literals are designated by matching double quotes. Everything inside of the
+double quotes is treated as a string, or sequence of characters, exactly as they've been typed, with
+a few exceptions.
+Thus, the meaning of
+print("Hello World!")
+in python is to simply print out what appears inside the double quotes exactly.
+Before moving on, try printing out several messages of your own composition.
+print statement - escape sequences
+After experimenting with the print statement, you might find some limitations. For example, try
+printing a message that will be printed on multiple lines using a single print statement such as the
+following:
+Python
+is
+fun!
+One idea might be to physically hit the enter key after typing in "Python" in the middle of the
+print statement. Unfortunately, doing this yields the error:
+SyntaxError: EOL while scanning string literal
+EOL stands for "end of line." The meaning of the error is that the interpreter was waiting to read
+in the end of the string literal, denoted by the second double quote, before the end of the line,
+since all python statements must fit on a single line. When the interpreter encountered the end of
+the line, which meant the end of the statement as well, it realized that the string literal had not
+been finished.
+In order to "fix" this issue, we need some way to denote to the interpreter that we wish to
+advance to the next line, without having to literally type in the enter key. python, as many other
+languages do, provides escape sequences to deal with issues like this one. An escape sequence is
+a code for a character not to be taken literally. For example, the escape sequence for the
